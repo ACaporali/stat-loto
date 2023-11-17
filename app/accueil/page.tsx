@@ -9,9 +9,9 @@ export const dynamic = 'force-dynamic'
 export default function Accueil() {
 
   return (
-    <div className='container mx-auto'>
-      <h1>Derniers resultats du loto</h1>    
-       <ShowLotoDraw  />
+    <div className='container mx-auto py-20'>
+      <h1 className='text-xl'>Derniers resultats du loto</h1>    
+        <ShowLotoDraw  />
     </div>
     		
   );
