@@ -1,21 +1,17 @@
 import Image from 'next/image'
+import { use, useEffect } from "react";
 import type { Metadata } from 'next'
-import LotoResult from '../components/lotoResult'
+import ShowLotoDraw from '../../components/showLotoDraw'
+import getUserRepos from '../services/loto.service'
 
-export const metadata: Metadata = {
-  title: 'Accueil',
-  description: 'Page d\'accuel de l\'application',
-}
-
+export const dynamic = 'force-dynamic'
 
 export default function Accueil() {
-  
+
   return (
     <div className='container mx-auto'>
-      <p>Bonjour</p>
-       
-       <LotoResult />
-    
+      <h1>Derniers resultats du loto</h1>    
+       <ShowLotoDraw  />
     </div>
     		
   );

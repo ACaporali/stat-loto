@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
-export async function getAPILastResults(context) {
+export async function getAPIResults(nbResult) {
   // fetch the blog posts from the mock API
   const apiResponse = await fetch('https://data.opendatasoft.com/api/explore/v2.1/catalog/datasets/resultats-loto-2019-a-aujourd-hui@agrall/records?limit=1');
   const data = await apiResponse.json();
@@ -19,14 +19,10 @@ export async function getAPILastResults(context) {
   };
 }
 
-export default function LotoResult() {
+export default function GetLotoResult() {
   const date = new Date().getFullYear()
-  const lotoData = getAPILastResults(1)
+  const lotoData = getAPIResults(1)
   return (
-    <div className=''>
-      <p>Resultat du loto</p>
-      {console.log("LOOGGGGGSSSS")}
-      {console.log(lotoData)}
-    </div>
+    {lotoData}
   )
 }

@@ -14,6 +14,10 @@ export default function Navbar() {
       name: "Accueil",
       path: "/accueil",
     },
+    {
+      name: "Test",
+      path: "/test",
+    },
   ];
   
   const callAPI = async () => {
