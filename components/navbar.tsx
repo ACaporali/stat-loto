@@ -14,6 +14,10 @@ export default function Navbar() {
       name: "Accueil",
       path: "/accueil",
     },
+    {
+      name: "Bon à savoir",
+      path: "/bon-a-savoir",
+    },
   ];
   
   return (

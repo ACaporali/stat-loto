@@ -1,32 +1,50 @@
-'use client'
-
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
 
-export default function Navbar() {
-  const pathname = usePathname();
-  const navLinks = [
-    { 
-      name: "Home init", 
-      path: "/" 
-    },
-    {
-      name: "Accueil",
-      path: "/accueil",
-    },
-  ];
+/**
+ * Fonction factoriel (!)
+ * Multiplie tous les nombres de 1 au nombre entiers choisi.
+ * ex : factorial(5) -> 1x2x3x4x5 = 120
+ */
+function factorial (num)
+{
+  var rval=1;
+  for (var i = 2; i <= num; i++)
+      rval = rval * i;
+  return rval;
+}
+
+function getProbabilityWin ()
+{
+  var probabilityWin = 0
+  
+  //Calcul factorail 49!/5!(49-5)
+  const fact49 = factorial(49)
+  const fact5 = factorial(5)
+  const fact44 = factorial(44) // 49-5 = 44
+  const fact10 = factorial(10)
+  const fact1 = factorial(1)
+  const fact9 = factorial(9) // 10-1 = 9
+  
+  const probability5Number = fact49/(fact5*fact44)
+  const probabilityLuckyNumber = fact10/(fact1*fact9)
+  probabilityWin = Math.ceil(probability5Number * probabilityLuckyNumber)
+  
+  return probabilityWin
+}
+
+export default function NumberCombination() {
+  const nFormat = new Intl.NumberFormat(); //formatage d'un nombre
+  const probabilityWin = getProbabilityWin()
+  
+  const fProbabilityWin = nFormat.format(probabilityWin)
+  const fCost = nFormat.format(probabilityWin * 2.20)
   
   return (
     <div>
-      <nav className='bg-emerald-300 text-white px-8 py-8'>     
-          {navLinks.map((link, index) => {
-            return (    
-              <Link key={index} className={`px-4 py-3 font-medium hover:underline  underline-offset-8 hover:text-slate-900 ${pathname === link.path ? 'underline  underline-offset-8' : ''}`} href={link.path}>
-                {link.name}
-              </Link>
-            );
-          })}
-      </nav>
+      <h1 className='text-xl'>Combien de combinaisons possibles ?</h1>
+      <p>Un tirage du Loto avec une grille simple se compose de <span className='font-bold'>5 numéros</span> allant de 1 à 49 puis d'<span className='font-bold'>un numéro chance</span> allant de 1 à 10. Chaque fois qu'un numéro est tiré, il est mis de côté afin qu'il ne puisse pas sortir plusieurs fois. Il y a au total <span className='font-bold'>{fProbabilityWin} combinaisons possibles</span> !</p>
+      <p>Pour gagner au 1er rang il faut avoir les 5 numéros gagnants ainsi que le numéro chance. Une grille simple coûte 2,20€, il faut donc débourser {fCost}€ pour gagner au Loto.</p>
     </div>
-  )
+    
+  );
 }

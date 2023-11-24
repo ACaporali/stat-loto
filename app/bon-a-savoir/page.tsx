@@ -1,19 +1,24 @@
 import Image from 'next/image'
-import { use, useEffect } from "react";
+import { use, useEffect } from "react"
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import ShowLotoDraw from '../../components/showLotoDraw'
+import NumberCombination from '../../components/numberCombination'
 import getUserRepos from '../services/loto.service'
 
-export const dynamic = 'force-dynamic'
-
-export default function Accueil() {
-
+export default function BonASavoir() {
+  
   return (
-    <div className='container mx-auto py-20'>
-      <h1 className='text-xl'>Derniers resultats du loto</h1>    
-        <ShowLotoDraw  />
+    <div>
+      <div className='container mx-auto py-10'>
+        <NumberCombination />
+      </div>
+      <div className='container mx-auto py-10'>
+        <h1 className='text-xl'>Les numéros qui ressortent le plus</h1>    
+        
+      </div>
     </div>
-    		
+    
   );
 }
 

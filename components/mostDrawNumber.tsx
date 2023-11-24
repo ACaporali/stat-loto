@@ -1,32 +1,41 @@
-'use client'
-
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import {getAPILastDraws, getUserRepos, test} from '../services/loto.service';
 
-export default function Navbar() {
-  const pathname = usePathname();
-  const navLinks = [
+
+export default function MostDrawNumber() {
+  const listNumber = getAPIAllNumber()
+  var allNumber = [
     { 
-      name: "Home init", 
-      path: "/" 
+      boule_1: [],
     },
     {
-      name: "Accueil",
-      path: "/accueil",
+      boule_2: [],
     },
+    {
+      boule_3: [],
+    },
+    {
+      boule_4: [],
+    },
+    {
+      boule_5: [],
+    },
+    {
+      numero_chance: [],
+    }
   ];
+  
+  if (listDraw.isError) return <p>Erreur lors de la recupération des résultats :s </p>;
+  if (listDraw.data){
+    listDraw.results.forEach( (element) => {
+      allNumber.push(element)
+    });
+  }
   
   return (
     <div>
-      <nav className='bg-emerald-300 text-white px-8 py-8'>     
-          {navLinks.map((link, index) => {
-            return (    
-              <Link key={index} className={`px-4 py-3 font-medium hover:underline  underline-offset-8 hover:text-slate-900 ${pathname === link.path ? 'underline  underline-offset-8' : ''}`} href={link.path}>
-                {link.name}
-              </Link>
-            );
-          })}
-      </nav>
+      <h1 className='text-xl'>Les numéros qui ressortent le plus</h1>
     </div>
-  )
+    
+  );
 }
