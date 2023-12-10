@@ -41,10 +41,16 @@ export default function NumberCombination() {
   
   return (
     <div>
-      <h1 className='text-xl'>Combien de combinaisons possibles ?</h1>
-      <p>Un tirage du Loto avec une grille simple se compose de <span className='font-bold'>5 numéros</span> allant de 1 à 49 puis d'<span className='font-bold'>un numéro chance</span> allant de 1 à 10. Chaque fois qu'un numéro est tiré, il est mis de côté afin qu'il ne puisse pas sortir plusieurs fois. Il y a au total <span className='font-bold'>{fProbabilityWin} combinaisons possibles</span> !</p>
-      <p>Pour gagner au 1er rang il faut avoir les 5 numéros gagnants ainsi que le numéro chance. Une grille simple coûte 2,20€, il faut donc débourser {fCost}€ pour gagner au Loto.</p>
+      <h1 className='text-xl py-2'>Combien de combinaisons possibles ?</h1>
+      <div>
+        <p>Un tirage du Loto avec une grille simple se compose de <span className='font-bold'>5 numéros allant de 1 à 49 puis d'un numéro chance allant de 1 à 10</span>. Chaque fois qu'un numéro est tiré, il est mis de côté afin qu'il ne puisse pas sortir plusieurs fois.</p>
+        <p>Pour gagner au 1er rang il faut avoir les 5 numéros gagnants ainsi que le numéro chance.</p>
+      </div>
+      <div className='grid grid-cols-3 gap-4 py-4 text-center'>
+        <p>Il y a au total <span className='font-bold'>{fProbabilityWin} combinaisons possibles</span> !</p>
+        <p>100% des gagnants ont joué</p>
+        <p>Une grille simple coûte 2,20€, il faut donc débourser {fCost}€ pour gagner au Loto.</p>
+      </div>
     </div>
-    
   );
 }
