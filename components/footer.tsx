@@ -1,3 +1,6 @@
+/**
+ * Composant du pied de page de l'application global
+ */
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 

@@ -1,5 +1,9 @@
 'use client'
 
+/**
+ * Composant d'affichage des X derniers tirages du Loto
+ */
+
 import Link from 'next/link';
 import use from "react";
 import useSWR from 'swr';

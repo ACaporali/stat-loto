@@ -1,5 +1,9 @@
 'use client'
 
+/**
+ * Composant de la barre de navigation de l'application global
+ */
+
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 

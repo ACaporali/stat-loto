@@ -1,5 +1,9 @@
 'use client'
 
+/**
+ * Composant d'affichage des moyennes de chaque numéro tirés et du numéro chance
+ */
+
 import Link from 'next/link'
 import { getAPIAllNumber } from '../services/loto.service';
 

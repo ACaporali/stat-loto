@@ -1,6 +1,10 @@
 import Link from 'next/link'
 
 /**
+ * Composant qui affiche le nombre de combinaisons possibles d'un tirage simple du Loto
+ */
+
+/**
  * Fonction factoriel (!)
  * Multiplie tous les nombres de 1 au nombre entiers choisi.
  * ex : factorial(5) -> 1x2x3x4x5 = 120
