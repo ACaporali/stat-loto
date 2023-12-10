@@ -20,6 +20,27 @@ body {
   padding: 0;
 }
 
-table.table-draw td{
+header {
+  padding-bottom: 2rem;
+}
+
+footer {
+  padding-top: 3rem;
+}
+
+table.table-draw td {
   border-top-width: 1px;
 }
+
+table tr:nth-child(2n) {
+  background-color: rgb(229 231 235);
+}
+
+
+table th, table td {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
