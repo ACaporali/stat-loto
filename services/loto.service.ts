@@ -15,13 +15,13 @@ export function getAPILastDraws(nbDraw=1) {
     data: data,
     isError: error
   }
-}
+};
 
 export function getAPIAllNumber() {
-  const { data, error } = useSWR('https://data.opendatasoft.com//api/explore/v2.1/catalog/datasets/resultats-loto-2019-a-aujourd-hui@agrall/records?select=boule_1%2Cboule_2%2Cboule_3%2Cboule_4%2Cboule_5&limit=20 ', fetcher);
+  const { data, error } = useSWR('https://data.opendatasoft.com/api/explore/v2.1/catalog/datasets/resultats-loto-2019-a-aujourd-hui@agrall/records?select=boule_1%2Cboule_2%2Cboule_3%2Cboule_4%2Cboule_5%2Cnumero_chance&limit=100', fetcher);
   
   return {
     data: data,
     isError: error
   }
-}
+};
